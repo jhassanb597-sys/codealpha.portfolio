@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Grid vs Flexbox: The Ultimate Guide — Jahangir</title>
+  <meta name="description" content="A practical guide to choosing between CSS Grid and Flexbox with real layout examples.">
+  <meta name="author" content="Jahangir">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    .post-hero{background:var(--accent);color:#fff;padding:calc(var(--header-height)+60px) 0 60px;text-align:center}
+    .post-hero h1{font-size:clamp(1.8rem,4vw,2.5rem);color:#fff;margin-top:16px}
+    .post-feat{max-width:720px;margin:-40px auto 40px;border-radius:12px;overflow:hidden;box-shadow:0 12px 40px rgba(0,0,0,.15)}
+    .post-feat img{width:100%;height:auto;display:block}
+    .pcontent{max-width:720px;margin:0 auto;padding:0 var(--px) 60px}
+    .pcontent h2{font-size:1.5rem;margin:36px 0 16px;color:var(--text)}
+    .pcontent h3{font-size:1.2rem;margin:28px 0 12px;color:var(--text)}
+    .pcontent p{margin-bottom:16px}
+    .pcontent ul{margin-bottom:16px;padding-left:24px}
+    .pcontent li{margin-bottom:8px}
+    .pcontent pre{background:var(--off);border:1px solid var(--border);border-radius:8px;padding:16px;overflow-x:auto;margin-bottom:20px}
+    .pcontent code{font-family:'Courier New',monospace;font-size:.875rem;color:var(--text)}
+    .pcontent blockquote{border-left:4px solid var(--accent);padding-left:20px;margin:24px 0;font-style:italic;color:var(--muted)}
+    .author-box{display:flex;gap:20px;align-items:center;background:var(--off);border:1px solid var(--border);border-radius:10px;padding:24px;margin-top:48px}
+    .author-box img{width:64px;height:64px;border-radius:50%;object-fit:cover}
+    .author-box h4{font-size:1rem;margin-bottom:4px}
+    .author-box p{font-size:.875rem;margin-bottom:0}
+    .post-back{margin-top:32px;text-align:center}
+    .comparison-table{width:100%;border-collapse:collapse;margin:24px 0}
+    .comparison-table th,.comparison-table td{border:1px solid var(--border);padding:12px;text-align:left}
+    .comparison-table th{background:var(--accent);color:#fff}
+    .comparison-table tr:nth-child(even){background:var(--off)}
+    @media(max-width:768px){.author-box{flex-direction:column;text-align:center}}
+  </style>
+</head>
+<body>
+<!-- ═══════════════════════════════
+     HEADER
+═══════════════════════════════ -->
+<header class="header" id="top">
+  <nav class="nav">
+
+    <!-- Brand — left -->
+    <a href="index.html" class="brand" aria-label="Home">
+      <img src="assets/images/logo.jpg" alt="Jahangir" style="height:70px;width:auto;">
+    </a>
+
+    <!-- Desktop links — right -->
+    <ul class="nav-links" role="list">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li class="dd">
+        <a href="index.html#projects" aria-haspopup="true" aria-expanded="false">
+          Projects
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </a>
+        <ul class="dd-menu" role="menu">
+          <li><a href="https://jhassanb597-sys.github.io/cal.code.alpha/" role="menuitem">🖩 Calculator</a></li>
+          <li><a href="https://jhassanb597-sys.github.io/portfolio-site/" role="menuitem">🌐 Web Dev Journey</a></li>
+          <li><a href="#" role="menuitem">👤 Personal Portfolio</a></li>
+        </ul>
+      </li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+
+    <a href="contact.html" class="btn btn-solid" style="margin-left:16px;">Hire Me</a>
+
+    <button class="ham" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+</header>
+
+<!-- Mobile drawer -->
+<nav class="mob" aria-label="Mobile menu">
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="index.html#projects">Projects</a>
+  <a href="blog.html">Blog</a>
+  <a href="contact.html">Contact</a>
+  <a href="contact.html" class="btn btn-solid">Hire Me</a>
+</nav>
+<main>
+
+<section class="post-hero">
+  <div class="wrap">
+    <span class="eyebrow" style="color:rgba(255,255,255,.8);">CSS Tutorial</span>
+    <h1><em class="typewriter">CSS Grid vs. Flexbox: The Ultimate Guide to Choosing the Right Layout Tool</em></h1>
+    <p style="color:rgba(255,255,255,.7);margin-top:12px;">May 3, 2026 · 4 min read · by <a href="about.html" style="color:#fff;text-decoration:underline;">Jahangir</a></p>
+  </div>
+</section>
+
+<div class="post-feat">
+  <img src="assets/images/css.png" alt="CSS Grid vs Flexbox">
+</div>
+
+<article class="pcontent">
+
+  <h2>Introduction</h2>
+  <p>In modern web development, mastering CSS layout is no longer about "hacks" like floats or positioning. It is about choosing the right tool for the job. Two of the most powerful features in CSS—Flexbox and CSS Grid—often leave developers wondering: Which one should I use?</p>
+  <p>In this guide, we'll break down the core differences, provide real-world examples, and help you master the "Flexbox vs. Grid" decision-making process.</p>
+
+  <h2>What is Flexbox? (The 1D Layout King)</h2>
+  <p>Flexbox (Flexible Box Layout) is designed for one-dimensional layouts. It excels at distributing space along a single axis—either a row or a column.</p>
+
+  <h3>When to use Flexbox:</h3>
+  <ul>
+    <li><strong>Alignment:</strong> Centering an item inside a container (the classic CSS struggle!).</li>
+    <li><strong>Navigation Bars:</strong> Spacing out links or buttons.</li>
+    <li><strong>Dynamic Lists:</strong> When you have a set of items that need to wrap or fill space based on their content size.</li>
+    <li><strong>Component-level layouts:</strong> Buttons, input groups, or icons.</li>
+  </ul>
+
+  <h3>Example:</h3>
+  <pre><code>.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}</code></pre>
+
+  <h2>What is CSS Grid? (The 2D Layout King)</h2>
+  <p>CSS Grid is the first true two-dimensional layout system. It allows you to control both rows and columns simultaneously. It is designed for complex layouts where you need to define the structure of a page.</p>
+
+  <h3>When to use CSS Grid:</h3>
+  <ul>
+    <li><strong>Page Layouts:</strong> Defining the main skeleton (Header, Sidebar, Main Content, Footer).</li>
+    <li><strong>Complex Overlaps:</strong> When items need to span multiple columns and rows.</li>
+    <li><strong>Uniform Grids:</strong> Creating perfectly aligned photo galleries or product cards.</li>
+  </ul>
+
+  <h3>Example:</h3>
+  <pre><code>.page-layout {
+  display: grid;
+  grid-template-columns: 200px 1fr; /* Sidebar and Main Content */
+  gap: 20px;
+}</code></pre>
+
+  <h2>Side-by-Side Comparison</h2>
+  <table class="comparison-table">
+    <thead>
+      <tr>
+        <th>Feature</th>
+        <th>Flexbox</th>
+        <th>CSS Grid</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Dimension</td>
+        <td>1D (Row OR Column)</td>
+        <td>2D (Rows AND Columns)</td>
+      </tr>
+      <tr>
+        <td>Focus</td>
+        <td>Content-first (size based on items)</td>
+        <td>Layout-first (size based on grid)</td>
+      </tr>
+      <tr>
+        <td>Best For</td>
+        <td>Components, alignment, flow</td>
+        <td>Page structure, complex architecture</td>
+      </tr>
+      <tr>
+        <td>Control</td>
+        <td>Aligns items along one axis</td>
+        <td>Aligns items in a structural grid</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>Real-World Scenarios: Choosing the Right Tool</h2>
+
+  <h3>Scenario 1: Building a Navigation Bar</h3>
+  <p>Since a nav bar is essentially a row of links, Flexbox is the clear winner. You don't need a complex grid to put items side-by-side.</p>
+  <p><strong>Verdict: Flexbox.</strong></p>
+
+  <h3>Scenario 2: A Dashboard Layout</h3>
+  <p>A dashboard typically features a sidebar, a main content area, and perhaps a footer. You need the sidebar to stay fixed while the content area fills the remaining space.</p>
+  <p><strong>Verdict: CSS Grid.</strong></p>
+
+  <h3>Scenario 3: A Product Grid</h3>
+  <p>You have 10 products and you want them to flow into rows and columns automatically based on the screen width.</p>
+  <p><strong>Verdict: CSS Grid</strong> (using <code>grid-template-columns: repeat(auto-fit, minmax(200px, 1fr))</code>).</p>
+
+  <h2>Best Practices: The "Grid + Flex" Hybrid</h2>
+  <p>You don't have to choose just one. In modern professional web development, they are best friends.</p>
+  <p>A common, high-performance pattern is:</p>
+  <ul>
+    <li><strong>Use CSS Grid</strong> for the overall page structure (Container).</li>
+    <li><strong>Use Flexbox</strong> inside the grid cells to align the content (Components).</li>
+  </ul>
+  <p>By using them together, you keep your CSS clean, maintainable, and highly performant.</p>
+
+  <h2>Final Thoughts</h2>
+  <p>Stop stressing about which one is "better." Flexbox is for alignment; Grid is for layout.</p>
+  <ul>
+    <li>If you are moving items in a single line, reach for <strong>Flexbox</strong>.</li>
+    <li>If you are designing the overall structure of the page, reach for <strong>Grid</strong>.</li>
+  </ul>
+  <p>By understanding the strengths of each, you will write cleaner code, build faster, and stop fighting your layouts.</p>
+
+  <div class="author-box">
+    <img src="assets/images/mypic.png" alt="Jahangir">
+    <div>
+      <h4>Written by Jahangir</h4>
+      <p>Frontend Developer based in Karachi. Currently interning at CodeAlpha and sharing what I learn along the way.</p>
+      <a href="about.html" style="color:var(--accent);font-weight:600;font-size:.875rem;display:inline-block;margin-top:6px;">About the Author →</a>
+    </div>
+  </div>
+
+  <div class="post-back"><a href="blog.html" class="btn btn-border">← Back to Blog</a></div>
+
+</article>
+</main>
+
+<!-- ═══════════════════════════════
+     FOOTER
+═══════════════════════════════ -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-grid">
+
+      <div class="fbrand">
+        <a href="index.html" class="brand"><img src="assets/images/logo.jpg" alt="Jahangir" style="height:28px;width:auto;"></a>
+        <p>Frontend Developer based in Karachi building clean, fast, and accessible websites.</p>
+        <div class="fsoc">
+          <a href="https://github.com/jhassanb597-sys" target="_blank" rel="noopener" aria-label="GitHub">GH</a>
+          <a href="https://linkedin.com/in/yourlinkedin" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
+          <a href="https://wa.me/923172594192" target="_blank" rel="noopener" aria-label="WhatsApp">WA</a>
+        </div>
+      </div>
+
+      <div class="fcol">
+        <h4>Navigation</h4>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="index.html#projects">Projects</a>
+        <a href="blog.html">Blog</a>
+        <a href="contact.html">Contact</a>
+      </div>
+
+      <div class="fcol">
+        <h4>Projects</h4>
+        <a href="https://jhassanb597-sys.github.io/cal.code.alpha/">🖩 Calculator App</a>
+        <a href="https://jhassanb597-sys.github.io/portfolio-site/">🌐 Web Dev Journey</a>
+        <a href="#">👤 Personal Portfolio</a>
+      </div>
+
+    </div>
+    <div class="footer-bar">
+      <p>&copy; <span class="yr"></span> Jahangir. All rights reserved.</p>
+      <a href="#top">↑ Back to top</a>
+    </div>
+  </div>
+</footer>
+
+<button id="btt" aria-label="Back to top">↑</button>
+<script src="assets/js/script.js"></script>
+</body>
+</html>
