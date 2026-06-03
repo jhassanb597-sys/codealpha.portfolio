@@ -63,12 +63,13 @@
 
 <!-- HERO -->
 <section class="hero" id="home">
-  <!-- Full background video -->
+  <!-- Full background video + matrix canvas -->
   <div class="hero-video-bg">
-    <video autoplay loop muted playsinline class="hero-video-full">
+    <video autoplay muted playsinline class="hero-video-full" id="hero-video">
       <source src="assets/images/code.animate.mp4" type="video/mp4">
       Your browser does not support the video tag.
     </video>
+    <canvas id="matrix-bg-canvas" class="hero-matrix-bg"></canvas>
     <div class="hero-video-bg-overlay"></div>
   </div>
 
@@ -91,10 +92,6 @@
       </div>
     </div>
 
-    <!-- Right: Matrix Rain Canvas -->
-    <div class="hero-matrix" aria-hidden="true">
-      <canvas id="matrix-canvas"></canvas>
-    </div>
 
   </div>
 </section>

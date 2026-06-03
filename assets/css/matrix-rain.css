@@ -1,21 +1,16 @@
-.hero-matrix {
-  position: relative;
-  width: 380px;
-  height: 380px;
-  border-radius: 50%;
-  overflow: hidden;
-  flex-shrink: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto;
-}
-.hero-matrix canvas {
-  display: block;
+.hero-matrix-bg {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
+  object-fit: cover;
+  display: none;
+  z-index: 0;
+}
+.hero-matrix-bg.active {
+  display: block;
 }
 
 @media (max-width: 768px) {
-  .hero-matrix { display: none; }
+  .hero-matrix-bg { display: none; }
 }
