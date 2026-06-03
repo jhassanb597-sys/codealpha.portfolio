@@ -18,10 +18,6 @@
   .hero-content { margin: 0 auto; }
   .hero .lead { margin-left: auto; margin-right: auto; }
   .hero-btns { justify-content: center; }
-  .hero-matrix {
-    width: 220px !important;
-    height: 220px !important;
-  }
   .about-grid { grid-template-columns: 1fr; gap: 32px; text-align: center; }
   .about-grid img {
     position: static !important;
@@ -45,10 +41,6 @@
   h2 { font-size: 1.35rem; }
   .hero { padding: calc(var(--header-height) + 24px) 0 32px; }
   .hero-grid { gap: 24px; }
-  .hero-matrix {
-    width: 160px !important;
-    height: 160px !important;
-  }
   .about-grid img {
     max-width: 220px !important;
   }
