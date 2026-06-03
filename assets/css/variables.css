@@ -1,29 +1,18 @@
-/* ============================================
-   CSS Variables & Custom Properties
- ============================================ */
-
 :root {
-  /* Colors */
   --white:      #ffffff;
   --off:        #f0f4f8;
   --border:     #d1d9e6;
   --text:       #1a2332;
   --muted:      #5c6880;
-  --accent:     #004e92;       /* Deep ocean blue - primary */
-  --accent2:    #0066cc;       /* Brighter blue - secondary */
-  --light:      #e6f0fa;       /* Light blue tint */
-  --dark-bg:    #003366;       /* Dark blue for header/hero */
-  --overlay:    rgba(0, 51, 102, 0.85);  /* Overlay for hero sections */
-
-  /* Spacing & Layout */
-  --header-height:   72px;
+  --accent:     #004e92;
+  --accent2:    #0066cc;
+  --light:      #e6f0fa;
+  --dark-bg:    #003366;
+  --overlay:    rgba(0, 51, 102, 0.85);
+  --header-height: 72px;
   --max:     1200px;
   --px:      24px;
-
-  /* Animation */
   --ease:    .25s ease;
-
-  /* Typography */
   --font-head: 'Lora', Georgia, serif;
   --font-body: 'Source Sans 3', 'Segoe UI', sans-serif;
 }

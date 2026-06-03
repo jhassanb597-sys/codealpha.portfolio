@@ -1,7 +1,5 @@
-/* script.js — Portfolio */
 (function () {
 
-  /* Sticky header */
   var header = document.querySelector('.header');
   var btt    = document.getElementById('btt');
   window.addEventListener('scroll', function () {
@@ -9,10 +7,8 @@
     if (btt)    btt.classList.toggle('show', window.scrollY > 360);
   }, { passive: true });
 
-  /* Back to top */
   if (btt) btt.addEventListener('click', function () { window.scrollTo({ top: 0, behavior: 'smooth' }); });
 
-  /* Hamburger */
   var ham = document.querySelector('.ham');
   var mob = document.querySelector('.mob');
   if (ham && mob) {
@@ -38,7 +34,6 @@
     });
   }
 
-  /* Scroll reveal */
   var revs = document.querySelectorAll('.reveal');
   if ('IntersectionObserver' in window && revs.length) {
     var obs = new IntersectionObserver(function (entries) {
@@ -51,13 +46,11 @@
     revs.forEach(function (el) { el.classList.add('in'); });
   }
 
-  /* Active nav link */
   var page = location.pathname.split('/').pop() || 'index.html';
   document.querySelectorAll('.nav-links a, .mob a').forEach(function (a) {
     if ((a.getAttribute('href') || '').includes(page)) a.classList.add('active');
   });
 
-  /* Contact form */
   var form = document.getElementById('contact-form');
   var succ = document.getElementById('form-success');
   if (form) {
@@ -87,7 +80,6 @@
     });
   }
 
-  /* Year */
   document.querySelectorAll('.yr').forEach(function (el) { el.textContent = new Date().getFullYear(); });
 
 })();

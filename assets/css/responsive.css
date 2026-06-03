@@ -1,8 +1,3 @@
-/* ============================================
-   CSS Responsive Styles
- ============================================ */
-
-/* ── RESPONSIVE ── */
 @media (max-width: 1024px) {
   .hero-grid { gap: 44px; }
   .about-grid { gap: 48px; }
@@ -15,24 +10,18 @@
 
 @media (max-width: 768px) {
   .sec, .sec-alt { padding: 60px 0; }
-  /* Nav */
   .nav-links, .nav > .btn-solid { display: none; }
   .ham { display: flex; }
   .mob { display: block; }
-  /* Hero */
   .hero { padding: calc(var(--header-height) + 48px) 0 56px; min-height: auto; }
   .hero-grid { grid-template-columns: 1fr; text-align: center; gap: 44px; }
   .hero-content { margin: 0 auto; }
   .hero .lead { margin-left: auto; margin-right: auto; }
   .hero-btns { justify-content: center; }
-  /* About */
   .about-grid { grid-template-columns: 1fr; gap: 40px; }
-  /* Grids */
   .proj-grid, .blog-grid { grid-template-columns: 1fr; }
-  /* Contact */
   .contact-grid { grid-template-columns: 1fr; }
   .row2 { grid-template-columns: 1fr; }
-  /* Footer */
   .footer-grid { grid-template-columns: 1fr; gap: 28px; }
   .footer-bar { justify-content: center; text-align: center; }
 }
