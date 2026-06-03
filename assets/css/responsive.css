@@ -1,6 +1,5 @@
 /* ============================================
    CSS Responsive Styles
-   Portfolio — Light, professional, content-focused
  ============================================ */
 
 /* ── RESPONSIVE ── */
@@ -26,10 +25,8 @@
   .hero-content { margin: 0 auto; }
   .hero .lead { margin-left: auto; margin-right: auto; }
   .hero-btns { justify-content: center; }
-  .hero-img { max-height: 280px; aspect-ratio: 16/9; }
   /* About */
   .about-grid { grid-template-columns: 1fr; gap: 40px; }
-  .img-ph { max-height: 260px; aspect-ratio: 16/9; }
   /* Grids */
   .proj-grid, .blog-grid { grid-template-columns: 1fr; }
   /* Contact */

@@ -81,7 +81,6 @@
         }, { once: true });
       });
       if (ok) {
-        /* TODO: connect Formspree / EmailJS / PHP */
         if (succ) succ.classList.add('show');
         form.reset(); form.style.display = 'none';
       }

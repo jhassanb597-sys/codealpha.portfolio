@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/matrix-rain.css">
 </head>
 <body>
 
@@ -94,6 +95,11 @@
       </div>
     </div>
 
+    <!-- Right: Matrix Rain Canvas -->
+    <div class="hero-matrix" aria-hidden="true">
+      <canvas id="matrix-canvas"></canvas>
+    </div>
+
   </div>
 </section>
 
@@ -105,10 +111,10 @@
     <div class="about-grid">
 
       <!-- Image -->
-      <img src="assets/images/mypic.png" alt="Jahangir" class="reveal" style="width:100%;max-width:420px;border-radius:10px;box-shadow:0 8px 32px rgba(0,0,0,.08);">
+      <img src="assets/images/mypic.png" alt="Jahangir" class="reveal glass" style="width:100%;max-width:420px;padding:6px;margin:0 auto;position:sticky;top:calc(var(--header-height) + 30px);">
 
       <!-- Text -->
-      <div class="about-text reveal">
+      <div class="about-text reveal glass">
         <span class="eyebrow">About Me</span>
         <h2><span class="typewriter">Developer & Problem Solver</span></h2>
         <div class="rule"></div>
@@ -293,12 +299,6 @@
       <!-- Form -->
       <div class="reveal">
         <div id="form-success" class="fsuccess">✅ Message sent! I'll reply soon.</div>
-        <!--
-          To make this form send real emails, choose one:
-          A) Formspree — set action="https://formspree.io/f/YOUR_ID" method="POST"
-          B) EmailJS   — use emailjs.send() in script.js
-          C) PHP       — fetch('/send.php', { method:'POST', body: new FormData(form) })
-        -->
         <form class="fbox" id="contact-form" novalidate>
           <div class="row2">
             <div class="field">
@@ -344,7 +344,7 @@
         <p>Frontend Developer based in Karachi building clean, fast, and accessible websites.</p>
         <div class="fsoc">
           <a href="https://github.com/jhassanb597-sys"        target="_blank" rel="noopener" aria-label="GitHub">GH</a>
-          <a href="https://linkedin.com/in/yourlinkedin" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
+          <a href="https://www.linkedin.com/in/jahangir-hassan-9037ba404/" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
           <a href="https://wa.me/923172594192"      target="_blank" rel="noopener" aria-label="WhatsApp">WA</a>
         </div>
       </div>
@@ -375,5 +375,6 @@
 
 <button id="btt" aria-label="Back to top">↑</button>
 <script src="assets/js/script.js"></script>
+<script src="assets/js/matrix-rain.js"></script>
 </body>
 </html>

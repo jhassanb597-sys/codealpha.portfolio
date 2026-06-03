@@ -1,12 +1,3 @@
-/* ============================================
-   Portfolio — style.css (Main Entry Point)
-   Light, professional, content-focused
-   Inspired by oceanhealthindex.org aesthetic
-
-   This file imports split CSS modules for
-   better organization and maintainability.
- ============================================ */
-
 /* ── Import CSS Modules ── */
 @import url('variables.css');
 @import url('components.css');
